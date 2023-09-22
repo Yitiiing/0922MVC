@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Final_new1.Models.TableTEAM2s1101605>
+@{
+    ViewBag.Title = "IndexTEAM";
+}
+
+<h2>🏐球隊資料</h2>
+
+
+<div>
+    <table class="table table-striped table-bordered table-hover">
+        @*<caption><div class="glyphicon glyphicon-user"></div>球員資料</caption>*@
+        <thead>
+            <tr>
+                <th>編號</th>
+                <th>名稱</th>
+                <th>創建日期</th>
+                <th>教練</th>
+                <th>勝率</th>
+                <th>球員人數</th>
+                <th>異動</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => m.tId)</td>
+                    <td>@Html.DisplayFor(x => m.tName)</td>
+                    <td>@Html.DisplayFor(x => m.eDate)</td>
+                    <td>@Html.DisplayFor(x => m.coach)</td>
+                    <td>@Html.DisplayFor(x => m.rate)</td>
+                    @if (m.tId == 1)
+                    {
+                        <td>@ViewBag.num1</td>
+                    }
+                    else if (m.tId == 2)
+                    {
+                        <td>@ViewBag.num2</td>
+                    }
+                    else if (m.tId == 3)
+                    {
+                        <td>@ViewBag.num3</td>
+                    }
+                    else if (m.tId == 4)
+                    {
+                        <td>@ViewBag.num4</td>
+                    }
+                    else if (m.tId == 5)
+                    {
+                        <td>@ViewBag.num5</td>
+                    }
+
+                    <td>
+                        @Html.ActionLink("明細", $"Index{m.tId}", "memberA",null,new { @class = "btn btn-primary" }) 
+                        @Html.ActionLink("編輯", "Edit", new { id = m.tId }, htmlAttributes: new { @class = "btn btn-primary" })
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                @*<td colspan="7">Powered by YZU</td>*@
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+
+
+@section topCSS{
+    <style>
+        /*設定caption*/
+        .table > caption {
+            margin-top: 10px;
+            background-color: #a7bcd2;
+            font-size: xx-large;
+        }
+
+        /*設定thead顏色*/
+        .table > thead > tr {
+            color: white;
+            background-color: #a7bcd2;
+        }
+
+        /*設定tfoot顏色及文字對齊*/
+        .table > tfoot > tr {
+            background-color: lightgreen;
+            font-size: large;
+        }
+
+        /*設定文字對齊*/
+        .table > caption, .table > thead > tr > th, .table > tfoot > tr {
+            text-align: center;
+        }
+    </style>
+}
+
+
+
+
+

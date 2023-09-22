@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="netdbAModelStoreContainer" CdmEntityContainer="teamEntities">
+    <EntitySetMapping Name="TableTEAMs1101605">
+      <EntityTypeMapping TypeName="netdbAModel.TableTEAMs1101605">
+        <MappingFragment StoreEntitySet="TableTEAMs1101605">
+          <ScalarProperty Name="tId" ColumnName="tId" />
+          <ScalarProperty Name="tName" ColumnName="tName" />
+          <ScalarProperty Name="eDate" ColumnName="eDate" />
+          <ScalarProperty Name="coach" ColumnName="coach" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="mNum" ColumnName="mNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

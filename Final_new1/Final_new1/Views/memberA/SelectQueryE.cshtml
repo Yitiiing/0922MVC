@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Final_new1.Models.TablememberEs1101605>
+@{
+    ViewBag.Title = "SelectQueryE";
+}
+
+<h2>conti ID查詢</h2>
+
+<form action="@Url.Action("MySelQueryE")" method="post">
+    ID:
+    <select name="ID">
+        @foreach (var m in Model)
+        {
+            <option value="@m.mId">@m.mId</option>
+        }
+    </select>
+
+    <br />
+    <input type="submit" value="查詢" class="btn btn-primary" />
+
+</form>
+

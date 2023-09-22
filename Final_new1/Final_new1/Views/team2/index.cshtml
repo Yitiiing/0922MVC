@@ -1,0 +1,18 @@
+﻿@model Final_new1.Models.TableLogins1101605
+@{
+    ViewBag.Title = "index";
+}
+
+@*<h2>index</h2>*@
+
+@ViewBag.Err
+<h1>1101605 陳羿婷</h1>
+<h2>帳號登入</h2>
+<form action="@Url.Action("index")" method="post">
+    帳號: @Html.EditorFor(m => m.account)<br />
+    密碼: @Html.PasswordFor(m => m.password) <br />
+    <input type="submit" value="登入" class="btn btn-primary" />
+    <p>account:1101605</p>
+    <p>password:20020912</p>
+</form>
+@*@Html.ActionLink("建立帳號", "Create", "memberA", new { @class = "btn btn-warning" })*@

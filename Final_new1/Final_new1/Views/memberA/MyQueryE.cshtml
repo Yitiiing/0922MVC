@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Final_new1.Models.TablememberEs1101605>
+
+@{
+    ViewBag.Title = "MyQueryE";
+}
+
+<h2 class="glyphicon glyphicon-search">查詢結果</h2>
+<br />
+<p class="navbar-right">共有 @ViewBag.sum5 筆資料</p>
+
+<div>
+    <table class="table table-striped table-bordered table-hover">
+        <caption><div class="glyphicon glyphicon-user"></div>球員資料</caption>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.mId)</th>
+                <th>@Html.DisplayNameFor(m => m.mName)</th>
+                <th>@Html.DisplayNameFor(m => m.age)</th>
+                <th>@Html.DisplayNameFor(m => m.height)</th>
+                <th>@Html.DisplayNameFor(m => m.ballage)</th>
+                <th>異動</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => m.mId)</td>
+                    <td>@Html.DisplayFor(x => m.mName)</td>
+                    <td>@Html.DisplayFor(x => m.age)</td>
+                    <td>@Html.DisplayFor(x => m.height)</td>
+                    <td>@Html.DisplayFor(x => m.ballage)</td>
+                    <td>
+                        @Html.ActionLink("明細", "DetailsE", new { id = m.mId }, htmlAttributes: new { @class = "btn btn-info" })
+                        @Html.ActionLink("編輯", "EditE", new { id = m.mId }, htmlAttributes: new { @class = "btn btn-primary" })
+                        @Html.ActionLink("刪除", "DeleteE", new { id = m.mId }, htmlAttributes: new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                @*<td colspan="7">Powered by YZU</td>*@
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+<p>
+    @Html.ActionLink("返回查詢", "Querystart", "memberA")
+    @Html.ActionLink("新增球員資料", "CreateE", null, new { @class = "btn btn-warning" })
+</p>
+
+@section topCSS{
+    <style>
+        /*設定caption*/
+        .table > caption {
+            margin-top: 10px;
+            background-color: #00DB00;
+            font-size: xx-large;
+        }
+
+        /*設定thead顏色*/
+        .table > thead > tr {
+            color: white;
+            background-color: #00B200;
+        }
+
+        /*設定tfoot顏色及文字對齊*/
+        .table > tfoot > tr {
+            background-color: lightgreen;
+            font-size: large;
+        }
+
+        /*設定文字對齊*/
+        .table > caption, .table > thead > tr > th, .table > tfoot > tr {
+            text-align: center;
+        }
+    </style>
+}

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="netdbAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TableTEAMs1101605">
+    <Key>
+      <PropertyRef Name="tId" />
+    </Key>
+    <Property Name="tId" Type="Int32" Nullable="false" />
+    <Property Name="tName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="eDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="coach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="rate" Type="Double" Nullable="false" />
+    <Property Name="mNum" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="teamEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TableTEAMs1101605" EntityType="Self.TableTEAMs1101605" />
+  </EntityContainer>
+</Schema>

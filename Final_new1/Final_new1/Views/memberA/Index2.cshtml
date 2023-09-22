@@ -1,0 +1,91 @@
+﻿@*@model IEnumerable<Final_new1.Models.TableMemberBs1101605>*@
+@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<Final_new1.Models.TableMemberBs1101605>
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>🏐屏東台電球員個人資料</h2>
+<br />
+<p class="navbar-right">第 @ViewBag.page2 頁，共 @ViewBag.c2 筆</p>
+
+<div>
+    <table class="table table-striped table-bordered table-hover">
+        <caption><div class="glyphicon glyphicon-user"></div>球員資料</caption>
+        <thead>
+            <tr>
+                <th>背號</th>
+                <th>姓名</th>
+                <th>年齡</th>
+                <th>身高(cm)</th>
+                <th>球齡</th>
+                <th>異動</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => m.mId)</td>
+                    <td>@Html.DisplayFor(x => m.mName)</td>
+                    <td>@Html.DisplayFor(x => m.age)</td>
+                    <td>@Html.DisplayFor(x => m.height)</td>
+                    <td>@Html.DisplayFor(x => m.ballage)</td>
+                    <td>
+                        @Html.ActionLink("明細", "DetailsB", new { id = m.mId }, htmlAttributes: new { @class = "btn btn-info glyphicon glyphicon-paperclip", @style = "background-color:#737373" })
+                        @Html.ActionLink("編輯", "EditB", new { id = m.mId }, htmlAttributes: new { @class = "btn btn-primary glyphicon glyphicon-edit", @style = "background-color:#4c6076" })
+                        @Html.ActionLink("刪除", "DeleteB", new { id = m.mId }, htmlAttributes: new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7">目前人數 :@ViewBag.num2 人 </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Index2", new { page }))
+<p>
+    @Html.ActionLink("返回首頁", "IndexTEAM", "team2", null, new { @class = "btn btn-warning glyphicon glyphicon-home", @style = "background:#b08a6d  border-color:#000000" })
+    @Html.ActionLink("新增員工資料", "CreateB", null, new { @class = "btn btn-warning glyphicon glyphicon-pencil", @style = "background:#b08a6d  border-color:#000000" })
+</p>
+
+@section topCSS{
+    <style>
+        /*設定caption*/
+        .table > caption {
+            margin-top: 10px;
+            background-color: #A1A1A1;
+            font-size: xx-large;
+        }
+
+        /*設定thead顏色*/
+        .table > thead > tr {
+            color: white;
+            background-color: #C9C9C9;
+        }
+
+        /*設定tfoot顏色及文字對齊*/
+        .table > tfoot > tr {
+            background-color: #A1A1A1;
+            font-size: large;
+        }
+
+        /*設定文字對齊*/
+        .table > caption, .table > thead > tr > th, .table > tfoot > tr, .table > tbody > tr > td {
+            text-align: center;
+        }
+    </style>
+}
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+﻿@model Final_new1.Models.TablememberDs1101605
+@{
+    ViewBag.Title = "QueryD";
+}
+
+<h2>關鍵字查詢</h2>
+<form action="@Url.Action("MyQueryD")" method="post">
+    <p>雲林美津濃球員</p>
+    <p>身高 @Html.EditorFor(m => m.height) 以上</p>
+    或
+    <p>球齡 @Html.EditorFor(m => m.ballage) 年以上</p><br />
+    <input type="submit" value="search" class="btn btn-primary glyphicon glyphicon-search" />
+</form>
+<br />
+<p>@Html.ActionLink("返回查詢", "Querystart", "memberA", null, new { @class = "btn btn-warning" })</p>
+
+

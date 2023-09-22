@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Final_new1.Models.TablememberDs1101605>
+@{
+    ViewBag.Title = "SelectQueryD";
+}
+
+<h2>雲林mizuno ID查詢</h2>
+
+<form action="@Url.Action("MySelQueryD")" method="post">
+    ID:
+    <select name="ID">
+        @foreach (var m in Model)
+        {
+            <option value="@m.mId">@m.mId</option>
+        }
+    </select>
+
+    <br />
+    <input type="submit" value="查詢" class="btn btn-primary" />
+
+</form>
+
+

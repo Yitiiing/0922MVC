@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="memberCModelStoreContainer" CdmEntityContainer="memberCEntities">
+    <EntitySetMapping Name="TableMemberCs1101605">
+      <EntityTypeMapping TypeName="memberCModel.TableMemberCs1101605">
+        <MappingFragment StoreEntitySet="TableMemberCs1101605">
+          <ScalarProperty Name="mId" ColumnName="mId" />
+          <ScalarProperty Name="mName" ColumnName="mName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="ballage" ColumnName="ballage" />
+          <ScalarProperty Name="tId" ColumnName="tId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,67 @@
+﻿@model Final_new1.Models.TablememberEs1101605
+
+@{
+    ViewBag.Title = "DetailsE";
+}
+<h2 class="glyphicon glyphicon-paperclip">詳細資訊</h2>
+<div class="container">
+    <div class="col-lg-9">
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(m => m.mId)</dt>
+            <dd>@Html.DisplayFor(m => m.mId)</dd>
+            <dt>@Html.DisplayNameFor(m => m.mName)</dt>
+            <dd>@Html.DisplayFor(m => m.mName)</dd>
+            <dt>@Html.DisplayNameFor(m => m.age)</dt>
+            <dd>@Html.DisplayFor(m => m.age)</dd>
+            <dt>@Html.DisplayNameFor(m => m.email)</dt>
+            <dd>@Html.DisplayFor(m => m.email)</dd>
+            <dt>@Html.DisplayNameFor(m => m.height)</dt>
+            <dd>@Html.DisplayFor(m => m.height)</dd>
+            <dt>@Html.DisplayNameFor(m => m.weight)</dt>
+            <dd>@Html.DisplayFor(m => m.weight)</dd>
+            <dt>@Html.DisplayNameFor(m => m.ballage)</dt>
+            <dd>@Html.DisplayFor(m => m.ballage)</dd>
+        </dl>
+    </div>
+    <div class="col=lg-3">
+        <img src="~/images/conti.png" alt="" width="250" />
+    </div>
+</div>
+<p>
+    @Html.ActionLink("編輯", "EditE", new { id = Model.mId }, new { @class = "btn btn-primary glyphicon glyphicon-edit" })
+    @Html.ActionLink("返回球員列表", "Index5", null, new { @class = "btn btn-warning" })
+</p>
+
+@section topCSS{
+    <style>
+        .dl-horizontal {
+            background-color: #f5deb3 !important;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        dt {
+            background-color: #d2b48c !important;
+            border-width: 1px !important;
+            border-style: solid;
+            padding-right: 15px !important;
+        }
+
+        dd {
+            border-bottom-width: 2px !important;
+            border-color: gray !important;
+            border-bottom: dashed;
+            padding-left: 20px;
+        }
+
+        .dl-horizontal > dt, .dl-horizontal > dd {
+            border-radius: 3px 3px 3px 3px !important;
+            font-size: larger;
+            line-height: 25px !important;
+            vertical-align: central;
+            padding: 3px;
+        }
+    </style>
+}
+
+
